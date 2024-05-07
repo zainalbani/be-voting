@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const mid = require("../middleware/restrict.js")
 const CLogin = require("../controllers/login.js");
 const CSearch = require("../controllers/searchUser.js")
 const CAllCalon = require("../controllers/getAllCalon.js")
