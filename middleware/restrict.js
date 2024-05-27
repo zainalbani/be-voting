@@ -4,7 +4,8 @@ const {JWT_SECRET} = process.env;
 module.exports = {
     mustLogin: (req, res, next) => {
         try {
-            const token = req.headers["authorization"].split("Bearer ")[1];
+            const authHeaders = req.headers["authorization"];
+            const token = authHeaders.split('Bearer ')[1];
             if (!token) {
                 return res.status(401).json({
                     status: false,

@@ -24,7 +24,6 @@ module.exports = (sequelize, DataTypes) => {
     kelas: DataTypes.STRING,
     daftar: DataTypes.INTEGER,
     nowa: DataTypes.STRING,
-    status_pemilih: DataTypes.INTEGER,
     nama_ibu: DataTypes.STRING,
     is_active: DataTypes.INTEGER,
     paslon_id: DataTypes.INTEGER,
