@@ -9,6 +9,7 @@ const port = 8000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true}));
 app.use(router);
+app.use("/public", express.static("public"));
 app.use(bodyParser.json());
 app.listen(port, async function() {
     try{
