@@ -15,7 +15,7 @@ module.exports = {
       const image_url = req.file;
 
       const uploadImage =
-        `http://localhost:8000/public/images/` + image_url.filename;
+        `http://192.168.123.40:8000/public/images/` + image_url.filename;
 
       const pemilihan = await HasilPemilihan.create({
         paslon_id,
@@ -30,6 +30,7 @@ module.exports = {
         image_url: uploadImage,
         youtube_link,
         paslon_id,
+        is_active: "1"
       });
 
       if (!calon) {

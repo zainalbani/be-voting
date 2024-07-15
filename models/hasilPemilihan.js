@@ -19,7 +19,8 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       primaryKey: true
     },
-    jumlah_suara: DataTypes.INTEGER
+    jumlah_suara: DataTypes.INTEGER,
+    is_active: DataTypes.INTEGER,
   }, {
     sequelize,
     modelName: 'HasilPemilihan',

@@ -12,34 +12,23 @@ const login = async (req,res) => {
                 message: "User tidak ditemukan",
             });
         }
+        if (user.role == 'user'){
+            if(otp != user.otp) {
+                return res.status(401).send({
+                    message: "Otp anda salah",
+                });
+            }
+            if(user.is_active == 0){
+                return res.status(401).send({
+                    message: "Anda sudah melakukan pemilihan suara. Apabila terdapat kesalahan, silahkan hubungi Wali Kelas",
+                });
+            }
+        }
         
-        if(otp != user.otp) {
-            return res.status(401).send({
-                message: "Otp anda salah",
-            });
-        }
-        if(user.is_active == 0){
-            return res.status(401).send({
-                message: "Anda sudah melakukan pemilihan suara. Apabila terdapat kesalahan, silahkan hubungi Wali Kelas",
-            });
-        }
-
-        const payload = {
-            id: user.nipd
-        };
-
-        const token = jwt.sign(payload, JWT_SECRET);
-
-        const data = {
-            nipd: user.nipd,
-            nama_siswa: user.nama_siswa
-        };
-
         return res.status(200).send({
             status: true,
             message: "user logged in successfully",
-            data,
-            token,
+            user
         });
     } catch (err){
         console.log(err);

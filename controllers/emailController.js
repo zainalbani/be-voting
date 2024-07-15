@@ -27,6 +27,7 @@ module.exports = async (req, res, next) => {
         <p>Kode OTP untuk pemilihan suara anda adalah ${otp} </p>
         `;
         const templateEmail = {
+            from: 'E-Voting SMK N 2 Bawang <evoting2507@gmail.com>',
             to: email.toLowerCase(),
             subject: "Kode OTP untuk Pemilihan Suara",
             html: html

@@ -24,6 +24,7 @@ module.exports = (sequelize, DataTypes) => {
     visi: DataTypes.STRING,
     misi: DataTypes.STRING,
     youtube_link: DataTypes.STRING,
+    is_active: DataTypes.INTEGER,
     image_url : DataTypes.STRING
   }, {
     sequelize,
